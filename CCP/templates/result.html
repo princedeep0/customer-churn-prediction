@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Churn Prediction Result</title>
+    <style>
+        body {
+            background: #e8f1ff;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .box {
+            background: white;
+            padding: 30px;
+            width: 420px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            color: #1e3a8a;
+        }
+
+        .yes {
+            color: #b91c1c;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .no {
+            color: #065f46;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        a {
+            display: block;
+            margin-top: 20px;
+            background: #1e3a8a;
+            color: white;
+            padding: 10px;
+            border-radius: 6px;
+            text-decoration: none;
+        }
+
+        a:hover {
+            background: #0f1e5c;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box">
+        <h2>Prediction Result</h2>
+
+        {% if prediction == 1 %}
+            <p class="yes">Customer WILL Churn ❌</p>
+        {% else %}
+            <p class="no">Customer Won't Churn ✅</p>
+        {% endif %}
+
+        <p><b>Churn Probability:</b> {{ probability }}</p>
+
+        <a href="/">Predict Again</a>
+    </div>
+
+</body>
+</html>
